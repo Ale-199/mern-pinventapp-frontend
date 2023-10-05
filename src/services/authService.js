@@ -47,11 +47,11 @@ export const loginUser = async (userData) => {
       toast.success("Login successfully");
     }
     return res.data;
-  } catch (err) {
+  } catch (error) {
     const message =
-      (err.res && err.res.data && err.res.data.message) ||
-      err.message ||
-      err.toString();
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
     toast.error(message);
   }
 };
